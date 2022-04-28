@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  php-apache-environment:
+    container_name: basic-level-pho-projects
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4040:80
+    volumes:
+      - ./:/var/www/html/
+
+  db:
+    container_name: db-basic-php-projects
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8080:80'
+    restart: always
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
