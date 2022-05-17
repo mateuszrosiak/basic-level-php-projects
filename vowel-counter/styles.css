@@ -1,0 +1,41 @@
+* {
+
+}
+
+body {
+    background-color: mediumpurple;
+    font-family: monospace;
+}
+
+.form {
+    margin: 10vh auto;
+    background-color: lightgrey;
+    box-shadow: 0 0 1em black;
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h2 {
+    font-size: 2.25rem;
+}
+
+.vowel-input {
+    padding: 1em 4em;
+}
+
+.calculate {
+    margin-top: 1.2em;
+    padding: 0.5em 1.5em;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 1.3em;
+}
+
+.output {
+    margin-top: 4em;
+    font-size: 1.25em;
+}
