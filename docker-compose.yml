@@ -14,6 +14,7 @@ services:
   db:
     container_name: db-basic-php-projects
     image: mysql:5.7
+    platform: linux/amd64
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
