@@ -9,4 +9,4 @@ Projects included:
 * [Vowel Counter] (https://github.com/mateuszrosiak/basic-level-php-projects/tree/main/vowel-counter)
 * TODO App  
 * Tip Calculator 
-* Weight Tracker App
+* [Weight Tracker App] (https://github.com/mateuszrosiak/basic-level-php-projects/tree/main/weight-tracker-app)
