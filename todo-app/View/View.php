@@ -6,10 +6,11 @@ namespace App;
 
 class View
 {
+    protected array $params;
 
-    public function __construct()
+    public function __construct(array $params)
     {
-
+        $this->params = $params;
         require_once('./layout.php');
     }
 }

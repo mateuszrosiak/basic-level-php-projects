@@ -31,11 +31,14 @@
 
                         <div class="form-item">
                             <label for="date">Due date: </label>
-                            <input type="date" name="due-date" id="date" required>
+                            <input type="date" name="due-date" id="date"
+                                   required>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="test" id="add-weight" name="submit-weight-entry">Add new task</button>
+                <button type="submit" class="test" id="add-weight"
+                        name="submit-weight-entry">Add new task
+                </button>
         </form>
     </div>
 
@@ -46,8 +49,8 @@
                 <tr>
                     <td>No:</td>
                     <td>Date:</td>
-                    <td>Task: </td>
-                    <td>Due Date: </td>
+                    <td>Task:</td>
+                    <td>Due Date:</td>
                     <td>Action</td>
                 </tr>
                 </thead>
@@ -58,16 +61,20 @@
             <table>
                 <thead>
                 <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <?php
+                    foreach ($params as $param): ?>
+                    <td><?= htmlentities($param['id']) ?> </td>
+                    <td><?= htmlentities($param['date']) ?></td>
+                    <td><?= htmlentities($param['task']) ?></td>
+                    <td><?= htmlentities($param['due-date']) ?></td>
+                    <td>
+                        <button>Action</button>
+                    </td>
                 </tr>
-
+                <? endforeach; ?>
                 </thead>
             </table>
+
         </div>
     </div>
 </div>

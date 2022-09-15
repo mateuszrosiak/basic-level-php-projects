@@ -22,11 +22,9 @@ class Controller
 
     public function run()
     {
-        if(!$this->request->isPost())
-        {
-            print_r($this->request->getGetData());
-        }
 
-        $view = new View();
+        $entries = $this->database->getAllEntries();
+
+        $view = new View($entries);
     }
 }

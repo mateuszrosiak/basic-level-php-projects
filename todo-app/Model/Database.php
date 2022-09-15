@@ -41,8 +41,14 @@ class Database
         );
     }
 
-//    public function getAllEntries(): array
-//    {
-//        $sql = 'SELECT '
-//    }
+    public function getAllEntries(): array
+    {
+        $sql = 'SELECT id, date, task, `due-date` from entries';
+
+        $result = $this->conn->query($sql);
+
+        $tasks = $result->fetchAll();
+
+        return $tasks;
+    }
 }
