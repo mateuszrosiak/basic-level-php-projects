@@ -4,8 +4,10 @@ declare(strict_types=1);
 $request = $_POST;
 
 $allVowels = ['a', 'e', 'i', 'o', 'u'];
-$inputText = $request['vowel-input'];
-$arrayOfInput = str_split($inputText);
+if($_POST) {
+    $inputText = $request['vowel-input'];
+    $arrayOfInput = str_split($inputText);
+
 
 $vowelCounter = 0;
 
@@ -15,6 +17,8 @@ foreach($arrayOfInput as $char) {
             $vowelCounter++;
         }
     }
+}
+
 }
 ?>
 
@@ -35,7 +39,7 @@ foreach($arrayOfInput as $char) {
         <h2 class="h2">Vowel Counter</h2>
         <input type="text" class="vowel-input" name="vowel-input">
         <button class="calculate" type="submit">Calculate</button>
-        <span class="output">Number of vowels in given word (<?= $inputText; ?>) is: <? echo $vowelCounter; ?></span>
+        <span class="output">Number of vowels in given word (<?= $inputText = $inputText ?? "Waiting for input" ; ?>) is: <?= $vowelCounter = $vowelCounter ?? "Waiting for input"; ?></span>
     </form>
 </div>
 
