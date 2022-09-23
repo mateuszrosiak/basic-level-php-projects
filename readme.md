@@ -7,6 +7,5 @@ These projects don't intent to have fancy CSS or advanced functions. The primary
 Projects included:
 * [Simple Expense Tracker] (https://github.com/mateuszrosiak/basic-level-php-projects/tree/main/simple-expense-tracker)  
 * [Vowel Counter] (https://github.com/mateuszrosiak/basic-level-php-projects/tree/main/vowel-counter)
-* TODO App  
-* Tip Calculator 
+* [TODO App] (https://github.com/mateuszrosiak/basic-level-php-projects/tree/main/todo-app)
 * [Weight Tracker App] (https://github.com/mateuszrosiak/basic-level-php-projects/tree/main/weight-tracker-app)
