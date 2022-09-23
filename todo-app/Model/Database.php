@@ -51,4 +51,23 @@ class Database
 
         return $tasks;
     }
+
+    public function addTask(array $params): void {
+
+        try {
+            $date = $this->conn->quote($params['date']);
+            $task = $this->conn->quote($params['task']);
+            $dueDate = $this->conn->quote($params['due-date']);
+
+            $sql = "INSERT INTO entries(date, task, `due-date`) VALUES($date, $task, $dueDate)";
+            $this->conn->exec($sql);
+            header('Location: ./');
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            exit;
+        }
+
+
+    }
 }

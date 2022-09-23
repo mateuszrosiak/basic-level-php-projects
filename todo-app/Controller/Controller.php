@@ -22,9 +22,21 @@ class Controller
 
     public function run()
     {
-
         $entries = $this->database->getAllEntries();
 
-        $view = new View($entries);
+
+        if ($this->request->isPost()) {
+            $postData = $this->request->getPostData();
+            if ( ! empty($postData)) {
+                $postParams = [
+                    'date'     => $postData['date'],
+                    'task'     => $postData['task'],
+                    'due-date' => $postData['due-date'],
+                ];
+
+                $this->database->addTask($postParams);
+            }
+        }
+            $view = new View($entries);
+        }
     }
-}

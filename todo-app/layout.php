@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="test" id="add-weight"
+                <button type="submit" class="test" id="add-task"
                         name="submit-weight-entry">Add new task
                 </button>
         </form>
@@ -62,16 +62,19 @@
                 <thead>
                 <tr>
                     <?php
-                    foreach ($params as $param): ?>
+                    foreach ($params
+
+                    as $param): ?>
                     <td><?= htmlentities($param['id']) ?> </td>
                     <td><?= htmlentities($param['date']) ?></td>
                     <td><?= htmlentities($param['task']) ?></td>
                     <td><?= htmlentities($param['due-date']) ?></td>
                     <td>
-                        <button>Action</button>
+                        <a href="?action=delete&id=<?= $param['id'] ?>"><button>Action</button></a>
                     </td>
                 </tr>
-                <? endforeach; ?>
+                <?
+                endforeach; ?>
                 </thead>
             </table>
 
