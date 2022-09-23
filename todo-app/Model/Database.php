@@ -67,7 +67,17 @@ class Database
             echo $e->getMessage();
             exit;
         }
+    }
 
+    public function deleteTask(int $id): void {
+        try {
+            $sql = "DELETE FROM entries WHERE id={$id}";
+            $this->conn->exec($sql);
+            header('Location: ./');
 
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            exit;
+        }
     }
 }

@@ -24,6 +24,13 @@ class Controller
     {
         $entries = $this->database->getAllEntries();
 
+        if (count($_GET) > 0) {
+            if ($this->request->getGetData()['action'] === 'delete') {
+                $id = (int) $this->request->getGetData()['id'];
+                $this->database->deleteTask($id);
+            }
+        }
+
 
         if ($this->request->isPost()) {
             $postData = $this->request->getPostData();
@@ -37,6 +44,6 @@ class Controller
                 $this->database->addTask($postParams);
             }
         }
-            $view = new View($entries);
-        }
+        $view = new View($entries);
     }
+}
